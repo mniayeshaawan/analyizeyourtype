@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assest/css/const.css">
+    <title>Document</title>
+</head>
+<body>
+    
+<div class="container">
+        <h1>Can You Add New Keys to a const Object?</h1>
+        
+        <div class="answer">✅ YES, You Can!</div>
+        
+        <div class="code-section">
+            <span class="comment">// Creating a const object</span><br>
+            <span class="keyword">const</span> <span class="property">person</span> = {<br>
+            &nbsp;&nbsp;<span class="property">name</span>: <span class="string">"John"</span>,<br>
+            &nbsp;&nbsp;<span class="property">age</span>: <span class="number">25</span><br>
+            };<br><br>
+            
+            <span class="comment">// ✅ Adding a NEW key (property) to const object</span><br>
+            <span class="property">person</span>.<span class="property">city</span> = <span class="string">"New York"</span>;<br><br>
+            
+            <span class="comment">// ✅ Adding another new key with bracket notation</span><br>
+            <span class="property">person</span>[<span class="string">'job'</span>] = <span class="string">"Developer"</span>;<br><br>
+            
+            <span class="comment">// ✅ Adding a key with a dynamic name</span><br>
+            <span class="keyword">const</span> <span class="property">newKey</span> = <span class="string">'email'</span>;<br>
+            <span class="property">person</span>[<span class="property">newKey</span>] = <span class="string">"john@example.com"</span>;<br><br>
+            
+            <span class="comment">// ✅ Result: Object now has ALL new properties!</span><br>
+            console.<span class="property">log</span>(<span class="property">person</span>);<br>
+            <span class="comment">// { name: "John", age: 25, city: "New York", job: "Developer", email: "john@example.com" }</span>
+        </div>
+        
+        <div class="controls">
+            <button onclick="addNewKey()">Add New Key to const Object</button>
+            <button onclick="showObject()">Show Current Object</button>
+            <button onclick="clearOutput()">Clear Output</button>
+            <button onclick="resetObject()">Reset Object</button>
+        </div>
+        
+        <div class="demo-area">
+            <h3>Live Demonstration</h3>
+            <div class="output" id="output">
+                Click buttons to see what happens...
+            </div>
+        </div>
+        
+        <div class="try-it">
+            <h3>Try It Yourself!</h3>
+            <p>Add a new key-value pair to the object:</p>
+            <input type="text" id="keyInput" placeholder="Enter key name (e.g., 'country')">
+            <input type="text" id="valueInput" placeholder="Enter value (e.g., 'USA')">
+            <button onclick="addCustomKey()">Add Custom Key</button>
+        </div>
+        
+        <div class="key-differences">
+            <div class="card">
+                <h3>What You CAN Do with const Objects</h3>
+                <ul>
+                    <li>✅ Add new properties/keys</li>
+                    <li>✅ Modify existing property values</li>
+                    <li>✅ Delete properties (with delete operator)</li>
+                    <li>✅ Change property descriptors</li>
+                    <li>✅ Use Object methods (freeze, seal, etc.)</li>
+                </ul>
+            </div>
+            
+            <div class="card error">
+                <h3>What You CANNOT Do with const Objects</h3>
+                <ul>
+                    <li>❌ Reassign the variable itself</li>
+                    <li>❌ Point it to a different object</li>
+                    <li>❌ Redeclare it in the same scope</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="analogy">
+            <h3>🔑 Simple Analogy</h3>
+            <p>Think of a <code>const</code> object like a <strong>locked suitcase</strong>:</p>
+            <ul>
+                <li>✅ You can add items to the suitcase</li>
+                <li>✅ You can remove items from the suitcase</li>
+                <li>✅ You can rearrange items in the suitcase</li>
+                <li>❌ But you cannot swap the suitcase for a different one</li>
+            </ul>
+        </div>
+        
+        <div class="explanation">
+            <h3>Why This Works: Understanding const</h3>
+            <p><code>const</code> means <strong>"constant reference"</strong>, not "constant value".</p>
+            
+            <p>When you do:</p>
+            <pre>const obj = { a: 1 };</pre>
+            
+            <p>What's happening:</p>
+            <ul>
+                <li>A new object is created in memory at address <code>0x1234</code></li>
+                <li>The variable <code>obj</code> stores the <strong>reference</strong> (memory address <code>0x1234</code>)</li>
+                <li><code>const</code> means this reference cannot change</li>
+                <li>But the object at <code>0x1234</code> can be modified freely!</li>
+            </ul>
+            
+            <p>So when you add a new key:</p>
+            <pre>obj.b = 2;</pre>
+            <p>You're modifying the object at address <code>0x1234</code>, not changing the reference stored in <code>obj</code>.</p>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+
+    <script src="assest/js/const.js"></script>
+</body>
+</html>

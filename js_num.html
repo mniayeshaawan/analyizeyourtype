@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assest/css/js_num.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="dictionary-icon">📚</div>
+            <h1>Word Meaning Dictionary</h1>
+            <p class="subtitle">Look up definitions, pronunciations, and examples for 5 words</p>
+        </header>
+        
+        <div class="content">
+            <div class="dictionary-section">
+                <div class="search-box">
+                    <h2>Search for a Word</h2>
+                    <p>Type a word to see its meaning, pronunciation, and examples.</p>
+                    
+                    <div class="search-container">
+                        <input type="text" class="search-input" id="searchInput" 
+                               placeholder="Enter a word (e.g., 'ephemeral')">
+                        <button class="search-btn" onclick="searchWord()">🔍</button>
+                    </div>
+                    
+                    <div class="word-count">5 words in dictionary</div>
+                </div>
+                
+                <div id="resultCard" class="result-card">
+                    <div class="word-header">
+                        <div class="word-title" id="wordTitle">Word</div>
+                        <div class="phonetic" id="wordPhonetic">/fəˈnɛtɪk/</div>
+                    </div>
+                    
+                    <div class="meaning-section">
+                        <div class="part-of-speech" id="partOfSpeech">noun</div>
+                        <div class="definition" id="wordDefinition">
+                            Definition will appear here...
+                        </div>
+                        <div class="example" id="wordExample">
+                            Example sentence will appear here...
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="operations">
+                    <button class="btn btn-add" onclick="addRandomWord()">
+                        <span>➕</span> Add Random Word
+                    </button>
+                    <button class="btn" onclick="showAllWords()">
+                        <span>📋</span> Show All Words
+                    </button>
+                    <button class="btn btn-reset" onclick="resetDictionary()">
+                        <span>🔄</span> Reset Dictionary
+                    </button>
+                </div>
+                
+                <div class="dictionary-stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalWords">5</div>
+                        <div class="stat-label">Total Words</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="searches">0</div>
+                        <div class="stat-label">Searches</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="lastSearch">-</div>
+                        <div class="stat-label">Last Search</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="words-section">
+                <h2>Words in Dictionary</h2>
+                <p>Click on any word to see its full definition:</p>
+                
+                <div class="words-list" id="wordsList">
+                    <!-- Word cards will be dynamically added here -->
+                </div>
+                
+                <div class="empty-state" id="emptyState" style="display: none;">
+                    <div>📖</div>
+                    <h3>Dictionary Empty</h3>
+                    <p>Add some words to get started!</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Word Meaning Dictionary • 5 Words • Made with JavaScript</p>
+        </footer>
+    </div>
+    
+</body>
+</html>

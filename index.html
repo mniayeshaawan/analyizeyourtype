@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assest/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <section class="practice_section">
+        <p class="done">Instructions for life:</p>
+
+<ul>
+  <li>Eat</li>
+  <li>Sleep</li>
+  <li>Repeat</li>
+</ul>
+    </section> -->
+
+    <section>
+        <h1>String and Number Operations</h1>
+
+        <div class="expamle_btn">
+            <button class="btn" onclick="runExample()">Run Example 1 (Prompt)</button> <br>
+            <button class="btn" onclick="runExample2()">Run Example 2 (Console)</button> <br>
+            <button class="btn" onclick="runExample3()">Run Example 3 (Display)</button> <br>
+        </div>
+
+        <div id="output" class="output">
+            Results will appear here...
+        </div>
+
+    </section>
+    <br>
+    <!-- Typeof Practice -->
+    <section class="type_of">
+        <div class="container">
+            <header>
+                <h1>JavaScript typeof Operator</h1>
+                <p class="subtitle">Discover the data type of any JavaScript value</p>
+            </header>
+
+            <div class="content">
+                <div class="demo-section">
+                    <h2>Interactive Demo</h2>
+                    <p>Enter any value to check its data type:</p>
+
+                    <div class="input-group">
+                        <label for="valueInput">Enter a value:</label>
+                        <input type="text" id="valueInput" placeholder='Try: "Hello", 42, true, null, undefined'>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="typeSelect">Or select a value type:</label>
+                        <select id="typeSelect">
+                            <option value="">-- Select a value --</option>
+                            <option value='string'>String: "Hello World"</option>
+                            <option value='number'>Number: 42</option>
+                            <option value='boolean'>Boolean: true</option>
+                            <option value='null'>Null: null</option>
+                            <option value='undefined'>Undefined: undefined</option>
+                            <option value='object'>Object: {"name": "John"}</option>
+                            <option value='array'>Array: [1, 2, 3]</option>
+                            <option value='function'>Function: function() {}</option>
+                        </select>
+                    </div>
+
+                    <button class="btn" onclick="checkDataType()">Check Data Type</button>
+
+                    <div class="examples">
+                        <div class="example-btn" onclick="setExample('Hello World')">String</div>
+                        <div class="example-btn" onclick="setExample(42)">Number</div>
+                        <div class="example-btn" onclick="setExample(true)">Boolean</div>
+                        <div class="example-btn" onclick="setExample(null)">Null</div>
+                        <div class="example-btn" onclick="setExample(undefined)">Undefined</div>
+                        <div class="example-btn" onclick="setExample([1,2,3])">Array</div>
+                        <div class="example-btn" onclick="setExample({name: 'John'})">Object</div>
+                    </div>
+
+                    <div id="resultCard" class="result-card">
+                        <div class="result-title">
+                            <span>📊 Data Type Analysis</span>
+                        </div>
+                        <div id="resultContent">
+                            <!-- Results will appear here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="theory-section">
+                    <h2>Understanding typeof Operator</h2>
+                    <div class="theory-content">
+                        <h3>What is typeof?</h3>
+                        <p>The <code>typeof</code> operator returns a string indicating the type of the unevaluated
+                            operand.</p>
+
+                        <div class="example-box">
+                            <strong>Syntax:</strong> <code>typeof operand</code><br>
+                            <strong>or:</strong> <code>typeof(operand)</code>
+                        </div>
+
+                        <h3>Possible Return Values</h3>
+                        <ul>
+                            <li><code>"undefined"</code> - for undefined values</li>
+                            <li><code>"boolean"</code> - for Boolean values</li>
+                            <li><code>"number"</code> - for numbers (including <code>NaN</code> and
+                                <code>Infinity</code>)</li>
+                            <li><code>"string"</code> - for strings</li>
+                            <li><code>"symbol"</code> - for symbols (ES6+)</li>
+                            <li><code>"bigint"</code> - for BigInt values (ES2020+)</li>
+                            <li><code>"function"</code> - for functions</li>
+                            <li><code>"object"</code> - for objects, arrays, and null</li>
+                        </ul>
+
+                        <h3>Important Notes</h3>
+                        <ul>
+                            <li><code>typeof null</code> returns <code>"object"</code> (this is a historical bug in
+                                JavaScript)</li>
+                            <li><code>typeof NaN</code> returns <code>"number"</code> (NaN is technically a number)</li>
+                            <li>Arrays are objects, so <code>typeof []</code> returns <code>"object"</code></li>
+                            <li>Use <code>Array.isArray()</code> to check if a value is an array</li>
+                        </ul>
+
+                        <h3>Common typeof Examples</h3>
+                        <div class="example-box">
+                            <code>typeof "Hello"</code> → <code>"string"</code><br>
+                            <code>typeof 42</code> → <code>"number"</code><br>
+                            <code>typeof true</code> → <code>"boolean"</code><br>
+                            <code>typeof undefined</code> → <code>"undefined"</code><br>
+                            <code>typeof null</code> → <code>"object"</code><br>
+                            <code>typeof {name: "John"}</code> → <code>"object"</code><br>
+                            <code>typeof [1, 2, 3]</code> → <code>"object"</code><br>
+                            <code>typeof function() {}</code> → <code>"function"</code><br>
+                            <code>typeof Symbol()</code> → <code>"symbol"</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <p>JavaScript Data Type Checker | Using typeof Operator | Refresh page to try different values</p>
+            </footer>
+        </div>
+    </section>
+    <section class="cont_eg">
+        <div class="const_eg">
+        <a href="const.html">Constant Example</a>
+    </div>
+    <div class="typeof_op">
+        <a href="js_num.html">Dictionary Example</a>
+    </div>
+    <button class="btn
+    " onclick="testCode()">Test Code</button>
+    </section>
+
+
+
+
+    <!-- Js for prompt -->
+    <script>
+        function testCode() {
+            // CORRECT: prompt not pompt
+            let name = prompt("Enter name:");
+
+            // Using Date.now() instead of performance
+            let start = Date.now();
+
+            // Your code here
+            let result = "Hello " + name + "!";
+
+            let end = Date.now();
+            console.log("Time:", end - start, "ms");
+            alert(result);
+        }
+    </script>
+    <script src="assest/js/script.js"></script>
+</body>
+
+</html>
